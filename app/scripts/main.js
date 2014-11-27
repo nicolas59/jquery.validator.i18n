@@ -7,39 +7,48 @@
 				}
 			});
 
-			//chargement jquery.validator
-
+		var updateMsg = function(language){
 			$.ajax({
-				url:"scripts/jquery.validator_fr.json"
+				url:"scripts/jquery.validator_"+language+".json"
 			}).done(function(data){
-				$.extend($.validator.messages, data);	
+				var messages = {};
+				var propWithDynField = /\{\d\}/;
+				for(prop in data){
+					console.log(prop +" : " + data[prop]);
+					if(propWithDynField.test(data[prop])){
+						messages[prop] = $.validator.format(data[prop]);
+					}else{
+						messages[prop] = data[prop];	
+					}
+				
+					
+				}
+				$.extend($.validator.messages, messages);	
 			});
-			
+		}
 
 			$("#form").validate(
 			{
 				rules: {
 					nomInput: "required",
-					telInput: "required",
+					telInput: {
+						"required":true,
+						"maxlength":10,
+						"minlength":10
+					},
 					dtNInput: {
 						"required":true,
 						"date":true
-					}
+					},
+					emailInput:"required"
 				}
 			}
 			);
 
 		$("input[name='langue']").click(function(){
-			//modification chargement jqeury.validator
-			$.ajax({
-				url:"scripts/jquery.validator_"+$(this).val()+".json"
-			}).done(function(data){
-				$.extend($.validator.messages, data);	
-			});
-			
-
-
+			updateMsg($(this).val());
 		});
+		updateMsg($("input[name='langue']").val());
 	});
 
 })(jQuery)

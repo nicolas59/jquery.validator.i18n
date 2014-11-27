@@ -1,5 +1,7 @@
 {
 	"required": "Ce champs est obligatoire. [EN]",
-	"email": "L adresse {0} est invalide[EN]",
-	"date": "La date est invalide[EN]"
+	"email": "L adresse est invalide[EN]",
+	"date": "La date est invalide[EN]",
+	"maxlength": "Max car {0}[EN]",
+	"minlength": "Min car {0}[EN]"
 }

@@ -59,7 +59,11 @@
           </div> 
           <div class="form-group">
                <label for="TelInput">Tel* : </label>
-              <input type="email" class="form-control" id="telInput" name="telInput" placeholder="Date de naissance" >
+              <input type="text" class="form-control" id="telInput" name="telInput" placeholder="téléphone" >
+          </div> 
+           <div class="form-group">
+               <label for="emailInput">Email* : </label>
+              <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="email" >
           </div> 
           <div class="form-group">
                <input type="submit" name="Valider"/>
@@ -67,30 +71,18 @@
     </div>
   </div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-
     </div>
 
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
         <!-- build:js(.) scripts/plugins.js -->
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap/js/affix.js"></script>
         <script src="bower_components/bootstrap/js/alert.js"></script>
         <script src="bower_components/bootstrap/js/dropdown.js"></script>
@@ -104,7 +96,6 @@
         <script src="bower_components/bootstrap/js/collapse.js"></script>
         <script src="bower_components/bootstrap/js/tab.js"></script>
 
-        <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
 
         <!-- endbuild -->
