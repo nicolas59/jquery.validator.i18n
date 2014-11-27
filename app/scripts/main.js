@@ -14,7 +14,6 @@
 				var messages = {};
 				var propWithDynField = /\{\d\}/;
 				for(prop in data){
-					console.log(prop +" : " + data[prop]);
 					if(propWithDynField.test(data[prop])){
 						messages[prop] = $.validator.format(data[prop]);
 					}else{
