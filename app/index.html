@@ -76,12 +76,12 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/requirejs/require.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
 
         <!-- build:js(.) scripts/plugins.js -->
-
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap/js/affix.js"></script>
         <script src="bower_components/bootstrap/js/alert.js"></script>
@@ -95,12 +95,10 @@
         <script src="bower_components/bootstrap/js/scrollspy.js"></script>
         <script src="bower_components/bootstrap/js/collapse.js"></script>
         <script src="bower_components/bootstrap/js/tab.js"></script>
-
-        <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
-
-        <!-- endbuild -->
+       <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/require-config.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

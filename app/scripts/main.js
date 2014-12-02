@@ -1,30 +1,19 @@
-(function($){
+requirejs.config({
+	baseUrl : "bower_components/",
+	paths : {
+		"jquery" : "jquery/dist/jquery",
+		"jquery-validate" : "jquery-validation/dist/jquery.validate",
+		"jquery-validator-json" : "../scripts/validator.i18n"
+	}
+});
 
+require(["jquery", "jquery-validator-json", "jquery-validate" ], function($, validatori18n){
 	$(document).ready(function(){
 		$.validator.setDefaults({
 				submitHandler: function() {
 					alert("submitted!");
 				}
 			});
-
-		var updateMsg = function(language){
-			$.ajax({
-				url:"scripts/jquery.validator_"+language+".json"
-			}).done(function(data){
-				var messages = {};
-				var propWithDynField = /\{\d\}/;
-				for(prop in data){
-					if(propWithDynField.test(data[prop])){
-						messages[prop] = $.validator.format(data[prop]);
-					}else{
-						messages[prop] = data[prop];	
-					}
-				
-					
-				}
-				$.extend($.validator.messages, messages);	
-			});
-		}
 
 			$("#form").validate(
 			{
@@ -45,9 +34,8 @@
 			);
 
 		$("input[name='langue']").click(function(){
-			updateMsg($(this).val());
+			validatori18n.updateMsg($(this).val());
 		});
-		updateMsg($("input[name='langue']").val());
+		validatori18n.updateMsg($("input[name='langue']").val());
 	});
-
-})(jQuery)
+});
